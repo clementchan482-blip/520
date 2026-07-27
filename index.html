@@ -1,309 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Special Invitation ❤️</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>给我最可爱的女朋友 ❤️</title>
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
+*{box-sizing:border-box}
 body{
-font-family:Poppins,sans-serif;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4);
-height:100vh;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
+margin:0;
+font-family:"Microsoft YaHei",sans-serif;
+background:linear-gradient(135deg,#ffb6c9,#ffe5ec);
+color:#7A1F3D;
+overflow-x:hidden;
+}
+.page{display:none;min-height:100vh;justify-content:center;align-items:center;padding:30px}
+.active{display:flex}
+.card{
+max-width:760px;
+width:100%;
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(10px);
+padding:35px;
+border-radius:28px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
 text-align:center;
 }
-
-.container{
-background:rgba(255,255,255,.15);
-backdrop-filter:blur(18px);
-padding:40px;
-border-radius:25px;
-width:90%;
-max-width:650px;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
-animation:fadeIn 1.5s;
-}
-
-h1{
-font-family:"Great Vibes",cursive;
-font-size:60px;
-margin-bottom:15px;
-}
-
-h2{
-font-size:30px;
-margin-bottom:15px;
-}
-
-p{
+h1,h2{margin:10px 0}
+p{font-size:20px;line-height:1.8}
+img{width:100%;max-height:430px;object-fit:cover;border-radius:20px}
+button,a.btn{
+display:inline-block;
+margin-top:20px;
+padding:15px 32px;
+border-radius:40px;
+background:#7A1F3D;
+color:white;
 font-size:18px;
-line-height:1.8;
-margin:12px 0;
-}
-
-button{
-margin-top:30px;
-padding:16px 40px;
-border:none;
-border-radius:50px;
-font-size:18px;
-background:white;
-color:#ff4d6d;
 font-weight:bold;
+text-decoration:none;
+border:none;
 cursor:pointer;
 transition:.3s;
 }
-
-button:hover{
-transform:scale(1.08);
-}
-
-#letter,#invite,#final{
-display:none;
-animation:fadeIn 1s;
-}
-
-.heart{
-position:absolute;
-font-size:25px;
-animation:float 8s linear infinite;
-opacity:.6;
-}
-
-@keyframes float{
-from{
-transform:translateY(100vh);
-}
-to{
-transform:translateY(-120vh);
-}
-}
-
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-.footer{
-margin-top:25px;
-font-size:14px;
-opacity:.8;
-}
+button:hover,a.btn:hover{transform:scale(1.05)}
+.small{font-size:15px}
 </style>
 </head>
-
 <body>
 
-<div id="hearts"></div>
+<div class="page active" id="p1"><div class="card">
+<h1>💌 给我最可爱的女朋友</h1>
+<p>这里有一份只属于你的邀请函 ❤️</p>
+<button onclick="next()">打开邀请函</button>
+</div></div>
 
-<div class="container">
-
-<div id="welcome">
-
-<h1>💌</h1>
-
-<h2>✨ 致我最可爱的女朋友 ❤️ ✨</h2>
-
+<div class="page" id="p2"><div class="card">
+<h1>❤️ 我们的520天 ❤️</h1>
 <p>
-你收到了一封特别邀请函
+不知不觉，<b>520天</b>了。<br><br>
+有欢笑。<br>
+有傻笑。<br>
+有斗嘴，哈哈哈。<br>
+也有眼泪。<br><br>
+但无论发生什么，<br>
+最幸运的是，每一天都有你陪着我。❤️
 </p>
+<button onclick="next()">继续</button>
+</div></div>
 
-<button onclick="openLetter()">
-打开邀请函 💌
-</button>
+<div class="page" id="gallery"><div class="card">
+<img id="photo" src="photo1.jpg.jpg">
+<h2 id="cap">谢谢你陪我一起疯。❤️</h2>
+<button onclick="nextPhoto()">下一张</button>
+</div></div>
 
+<div class="page" id="invite"><div class="card">
+<h1>🍽️ 我们的520天纪念晚餐</h1>
+<p>📅 29 / 07 / 2026</p>
+<p>🕗 晚上 8:00</p>
+<p>📍 地点还是秘密 🤫</p>
+<button onclick="next()">当然要去 ❤️</button>
+</div></div>
+
+<div class="page" id="secretPage"><div class="card">
+<h1>🤫 准备好了吗？</h1>
+<button onclick="showSecret()">揭晓秘密</button>
+<div id="secret" style="display:none">
+<h2>🌊 The Ocean Peak</h2>
+<p>今晚，我们就在这里一起庆祝属于我们的520天。❤️</p>
+<a class="btn" target="_blank" href="https://www.google.com/maps/place/The+Ocean+Peak/@5.9917505,116.0785057,17z/data=!4m14!1m7!3m6!1s0x323b6bf66516f063:0xe9b0f32a62d1dca5!2sThe+Ocean+Peak!8m2!3d5.9917452!4d116.0810806!16s%2Fg%2F11xgynl43k!3m5!1s0x323b6bf66516f063:0xe9b0f32a62d1dca5!8m2!3d5.9917452!4d116.0810806!16s%2Fg%2F11xgynl43k?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D">📍 打开 Google Maps</a><br>
+<button onclick="next()">最后一页 ❤️</button>
 </div>
+</div></div>
 
-<div id="letter">
-
-<h1>My Love ❤️</h1>
-
+<div class="page" id="final"><div class="card">
+<h1>❤️ 告白 ❤️</h1>
 <p>
-
-Today marks our
-
-<b>520th Day Together.</b>
-
+谢谢你来到我的生命。<br><br>
+谢谢你陪我经历每一天。<br>
+谢谢你包容我的幼稚。<br>
+谢谢你一直都在。<br><br>
+<b>在这个520天后，<br>
+我们要好好爱着对方。❤️</b><br><br>
+未来还有好多好多个520，<br>
+希望身边的人，一直都是你。<br><br>
+—— 你的白目男朋友 ❤️
 </p>
-
-<p>
-
-520 days ago,
-
-I met someone who slowly became my favourite person,
-
-my safe place,
-
-my happiness,
-
-and the reason I smile a little more every day.
-
-</p>
-
-<p>
-
-Thank you for staying,
-
-for loving me,
-
-for laughing with me,
-
-and for making ordinary days feel special.
-
-</p>
-
-<p>
-
-So...
-
-I'd like to invite the most important person in my life
-
-to celebrate another beautiful milestone together.
-
-</p>
-
-<button onclick="showInvite()">Continue ❤️</button>
-
-</div>
-
-<div id="invite">
-
-<h1>✨ Official Invitation ✨</h1>
-
-<p style="font-size:22px;font-weight:bold;">
-520th Day Celebration Dinner
-</p>
-
-<p>
-📅 Date:<br>
-<b>____________</b>
-</p>
-
-<p>
-🕖 Time:<br>
-<b>____________</b>
-</p>
-
-<p>
-📍 Location:<br>
-<b>It's a Secret 🤫</b>
-</p>
-
-<p>
-
-Dress Code:
-
-Come exactly as you are...
-
-because you'll always be beautiful to me.
-
-</p>
-
-<button onclick="acceptInvite()">
-
-Accept Invitation ❤️
-
-</button>
-
-</div>
-
-<div id="final">
-
-<h1>🎉 Reservation Confirmed!</h1>
-
-<p>
-
-Yay!!
-
-I can't promise it'll be the fanciest dinner...
-
-</p>
-
-<p>
-
-But I promise it'll be filled with laughter,
-
-good food,
-
-lots of love,
-
-and another unforgettable memory with you.
-
-</p>
-
-<p>
-
-Thank you for choosing me,
-
-every single day.
-
-</p>
-
-<h2 style="margin-top:20px;">
-
-Happy 520th Day ❤️
-
-</h2>
-
-<p style="font-size:22px;">
-
-I Love You.
-
-Forever & Always.
-
-</p>
-
-<div class="footer">
-
-— Your Boyfriend ❤️
-
-</div>
-
-</div>
-
-</div>
+<a class="btn" target="_blank" href="https://youtu.be/0ffLURMclcM?si=DcHjTZv_Hl4XTYNd">🎵 播放我们的歌</a>
+</div></div>
 
 <script>
-
-function openLetter(){
-document.getElementById("welcome").style.display="none";
-document.getElementById("letter").style.display="block";
+const pages=["p1","p2","gallery","invite","secretPage","final"];
+let p=0;
+function next(){
+document.getElementById(pages[p]).classList.remove("active");
+p++;
+document.getElementById(pages[p]).classList.add("active");
 }
-
-function showInvite(){
-document.getElementById("letter").style.display="none";
-document.getElementById("invite").style.display="block";
+const imgs=[
+["photo1.jpg.jpg","谢谢你陪我一起疯。❤️"],
+["photo2.jpg.jpg","最幸福，就是有你。❤️"],
+["photo3.jpg.jpg","每一天都有你。❤️"],
+["photo4.jpg.jpg","希望未来一直陪着你。🎄"],
+["photo5.jpg.jpg","最美的笑容，是你的。🌹"]
+];
+let i=0;
+function nextPhoto(){
+i++;
+if(i>=imgs.length){next();return;}
+photo.src=imgs[i][0];
+cap.innerHTML=imgs[i][1];
 }
-
-function acceptInvite(){
-document.getElementById("invite").style.display="none";
-document.getElementById("final").style.display="block";
-
-for(let i=0;i<150;i++){
-let heart=document.createElement("div");
-heart.innerHTML=["❤️","💕","💖","💗"][Math.floor(Math.random()*4)];
-heart.className="heart";
-heart.style.left=Math.random()*100+"vw";
-heart.style.animationDuration=(Math.random()*4+4)+"s";
-heart.style.fontSize=(Math.random()*20+15)+"px";
-document.body.appendChild(heart);
+function showSecret(){
+document.getElementById("secret").style.display="block";
 }
-}
-
 </script>
-
 </body>
 </html>
