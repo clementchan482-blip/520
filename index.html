@@ -6,65 +6,31 @@
 <title>给我最可爱的女朋友 ❤️</title>
 <style>
 *{box-sizing:border-box}
-body{
-margin:0;
-font-family:"Microsoft YaHei",sans-serif;
-background:linear-gradient(135deg,#ffb6c9,#ffe5ec);
-color:#7A1F3D;
-overflow-x:hidden;
-}
+body{margin:0;font-family:"Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#ffb6c9,#ffe5ec);color:#7A1F3D}
 .page{display:none;min-height:100vh;justify-content:center;align-items:center;padding:30px}
 .active{display:flex}
-.card{
-max-width:760px;
-width:100%;
-background:rgba(255,255,255,.35);
-backdrop-filter:blur(10px);
-padding:35px;
-border-radius:28px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
-text-align:center;
-}
-h1,h2{margin:10px 0}
+.card{max-width:760px;width:100%;background:rgba(255,255,255,.35);backdrop-filter:blur(10px);padding:35px;border-radius:28px;box-shadow:0 15px 40px rgba(0,0,0,.15);text-align:center}
+img{width:100%;height:auto;max-height:520px;object-fit:contain;background:#fff;padding:10px;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,.15);transition:opacity .4s}
+button,a.btn{display:inline-block;margin-top:18px;padding:15px 32px;border:none;border-radius:40px;background:#7A1F3D;color:#fff;font-size:18px;font-weight:bold;text-decoration:none;cursor:pointer}
 p{font-size:20px;line-height:1.8}
-img{width:100%;max-height:430px;object-fit:cover;border-radius:20px}
-button,a.btn{
-display:inline-block;
-margin-top:20px;
-padding:15px 32px;
-border-radius:40px;
-background:#7A1F3D;
-color:white;
-font-size:18px;
-font-weight:bold;
-text-decoration:none;
-border:none;
-cursor:pointer;
-transition:.3s;
-}
-button:hover,a.btn:hover{transform:scale(1.05)}
-.small{font-size:15px}
 </style>
 </head>
 <body>
 
+<audio id="bgm" loop preload="auto">
+<source src="M500003h1IZ528EwNg.mp3" type="audio/mpeg">
+</audio>
+
 <div class="page active" id="p1"><div class="card">
 <h1>💌 给我最可爱的女朋友</h1>
-<p>这里有一份只属于你的邀请函 ❤️</p>
-<button onclick="next()">打开邀请函</button>
+<p>这里有一份只属于你的520天惊喜 ❤️</p>
+<p style="font-size:16px;">💕 点击按钮开始音乐与惊喜</p>
+<button onclick="startExperience()">打开邀请函 ❤️</button>
 </div></div>
 
 <div class="page" id="p2"><div class="card">
 <h1>❤️ 我们的520天 ❤️</h1>
-<p>
-不知不觉，<b>520天</b>了。<br><br>
-有欢笑。<br>
-有傻笑。<br>
-有斗嘴，哈哈哈。<br>
-也有眼泪。<br><br>
-但无论发生什么，<br>
-最幸运的是，每一天都有你陪着我。❤️
-</p>
+<p>不知不觉，<b>520天</b>了。<br><br>有欢笑。<br>有傻笑。<br>有斗嘴，哈哈哈。<br>也有眼泪。<br><br>但最幸运的是，每一天都有你。❤️</p>
 <button onclick="next()">继续</button>
 </div></div>
 
@@ -76,46 +42,38 @@ button:hover,a.btn:hover{transform:scale(1.05)}
 
 <div class="page" id="invite"><div class="card">
 <h1>🍽️ 我们的520天纪念晚餐</h1>
-<p>📅 29 / 07 / 2026</p>
+<p>📅 29/07/2026</p>
 <p>🕗 晚上 8:00</p>
-<p>📍 地点还是秘密 🤫</p>
+<p>📍 有一个地方，我想带你去 ❤️</p>
 <button onclick="next()">当然要去 ❤️</button>
 </div></div>
 
 <div class="page" id="secretPage"><div class="card">
-<h1>🤫 准备好了吗？</h1>
-<button onclick="showSecret()">揭晓秘密</button>
+<h1>🤫 揭晓地点</h1>
+<button onclick="document.getElementById('secret').style.display='block'">揭晓秘密</button>
 <div id="secret" style="display:none">
 <h2>🌊 The Ocean Peak</h2>
-<p>今晚，我们就在这里一起庆祝属于我们的520天。❤️</p>
-<a class="btn" target="_blank" href="https://www.google.com/maps/place/The+Ocean+Peak/@5.9917505,116.0785057,17z/data=!4m14!1m7!3m6!1s0x323b6bf66516f063:0xe9b0f32a62d1dca5!2sThe+Ocean+Peak!8m2!3d5.9917452!4d116.0810806!16s%2Fg%2F11xgynl43k!3m5!1s0x323b6bf66516f063:0xe9b0f32a62d1dca5!8m2!3d5.9917452!4d116.0810806!16s%2Fg%2F11xgynl43k?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D">📍 打开 Google Maps</a><br>
+<p>今晚，我们一起庆祝属于我们的520天。❤️</p>
+<a class="btn" target="_blank" href="https://www.google.com/maps/place/The+Ocean+Peak/@5.9917505,116.0785057,17z/data=!4m14!1m7!3m6!1s0x323b6bf66516f063:0xe9b0f32a62d1dca5!2sThe+Ocean+Peak!8m2!3d5.9917452!4d116.0810806!16s%2Fg%2F11xgynl43k!3m5!1s0x323b6bf66516f063:0xe9b0f32a62d1dca5!8m2!3d5.9917452!4d116.0810806!16s%2Fg%2F11xgynl43k?entry=ttu">📍 打开 Google Maps</a><br>
 <button onclick="next()">最后一页 ❤️</button>
-</div>
-</div></div>
+</div></div></div>
 
 <div class="page" id="final"><div class="card">
-<h1>❤️ 告白 ❤️</h1>
-<p>
-谢谢你来到我的生命。<br><br>
-谢谢你陪我经历每一天。<br>
-谢谢你包容我的幼稚。<br>
-谢谢你一直都在。<br><br>
-<b>在这个520天后，<br>
-我们要好好爱着对方。❤️</b><br><br>
-未来还有好多好多个520，<br>
-希望身边的人，一直都是你。<br><br>
-—— 你的白目男朋友 ❤️
-</p>
-<a class="btn" target="_blank" href="https://youtu.be/0ffLURMclcM?si=DcHjTZv_Hl4XTYNd">🎵 播放我们的歌</a>
+<h1>❤️</h1>
+<p>谢谢你来到我的生命。<br>谢谢你陪我走过520天。<br><br><b>未来还有很多很多个520，希望身边的人，一直都是你。</b><br><br>—— 你的白目男朋友 ❤️</p>
 </div></div>
 
 <script>
 const pages=["p1","p2","gallery","invite","secretPage","final"];
-let p=0;
+let currentPage=0;
 function next(){
-document.getElementById(pages[p]).classList.remove("active");
-p++;
-document.getElementById(pages[p]).classList.add("active");
+document.getElementById(pages[currentPage]).classList.remove("active");
+currentPage++;
+document.getElementById(pages[currentPage]).classList.add("active");
+}
+function startExperience(){
+document.getElementById("bgm").play().catch(()=>{});
+next();
 }
 const imgs=[
 ["photo1.jpg.jpg","谢谢你陪我一起疯。❤️"],
@@ -124,15 +82,18 @@ const imgs=[
 ["photo4.jpg.jpg","希望未来一直陪着你。🎄"],
 ["photo5.jpg.jpg","最美的笑容，是你的。🌹"]
 ];
-let i=0;
+let idx=0;
 function nextPhoto(){
-i++;
-if(i>=imgs.length){next();return;}
-photo.src=imgs[i][0];
-cap.innerHTML=imgs[i][1];
-}
-function showSecret(){
-document.getElementById("secret").style.display="block";
+const img=document.getElementById("photo");
+const cap=document.getElementById("cap");
+img.style.opacity=0;
+setTimeout(function(){
+idx++;
+if(idx>=imgs.length){next();return;}
+img.src=imgs[idx][0];
+cap.textContent=imgs[idx][1];
+img.style.opacity=1;
+},400);
 }
 </script>
 </body>
